@@ -1,19 +1,28 @@
 <template>
   <div id="app">
-    <DateTime />
-    <NextBus />
+    <div class="grid_container">
+      <div class="grid grid-left">
+        <DateTime />
+      </div>
+      <div class="grid grid-right">
+        <Weather />
+        <NextBus />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import DateTime from './modules/DateTime'
 import NextBus from './modules/NextBus'
+import Weather from './modules/Weather'
 
 export default {
   name: 'app',
   components: {
     DateTime,
-    NextBus
+    NextBus,
+    Weather
   }
 }
 </script>
@@ -30,5 +39,24 @@ body{
   font-family: 'Montserrat', sans-serif;
   color: white;
   background: black;
+}
+
+.grid_container{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 20px;
+}
+
+.grid-right{
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+
+  & > div{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+  }
 }
 </style>

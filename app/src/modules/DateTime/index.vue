@@ -20,7 +20,6 @@ export default {
 
 <style lang="scss" scoped>
     #datetime{
-        padding: 20px 0 0 20px;
         display: inline-block;
     }
 </style>
