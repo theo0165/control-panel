@@ -1,5 +1,5 @@
 <template>
-    <div class="clock">
+    <div id="clock">
         <span class="clock_hours">{{ hours }}</span>
         <span class="clock_seperator">:</span>
         <span class="clock_minutes">{{ minutes }}</span>
@@ -9,43 +9,43 @@
 
 <script>
 const fixZero = (num) => {
-    if(num < 10){
-        return "0" + num;
-    }
+  if (num < 10) {
+    return '0' + num
+  }
 
-    return num;
+  return num
 }
 
-const getDate = () => new Date();
-const getHours = () => fixZero(getDate().getHours());
-const getMinutes = () => fixZero(getDate().getMinutes());
-const getSeconds = () => fixZero(getDate().getSeconds());
+const getDate = () => new Date()
+const getHours = () => fixZero(getDate().getHours())
+const getMinutes = () => fixZero(getDate().getMinutes())
+const getSeconds = () => fixZero(getDate().getSeconds())
 
 export default {
-    name: "Clock",
-    data(){
-        return {
-            ticker: null,
-            hours: getHours(),
-            minutes: getMinutes(),
-            seconds: getSeconds()
-        }
-    },
-    created(){
-        this.ticker = setInterval(() => {
-            this.hours = getHours();
-            this.minutes = getMinutes();
-            this.seconds = getSeconds();
-        }, 1000); 
-    },
-    destroyed(){
-        clearInterval(this.ticker);
+  name: 'Clock',
+  data () {
+    return {
+      ticker: null,
+      hours: getHours(),
+      minutes: getMinutes(),
+      seconds: getSeconds()
     }
+  },
+  created () {
+    this.ticker = setInterval(() => {
+      this.hours = getHours()
+      this.minutes = getMinutes()
+      this.seconds = getSeconds()
+    }, 1000)
+  },
+  destroyed () {
+    clearInterval(this.ticker)
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-    .clock{
+    #clock{
         display: flex;
         align-items: center;
 
@@ -54,7 +54,7 @@ export default {
             padding: 0 3px;
 
             &:first-of-type{
-                padding-left: 0; 
+                padding-left: 0;
             }
         }
 
@@ -67,7 +67,7 @@ export default {
         }
 
         .clock_hours{}
-        
+
         .clock_minutes{}
 
         .clock_seconds{

@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <DateTime />
+    <NextBus />
   </div>
 </template>
 
 <script>
 import DateTime from './modules/DateTime'
+import NextBus from './modules/NextBus'
 
 export default {
   name: 'app',
   components: {
-    DateTime
+    DateTime,
+    NextBus
   }
 }
 </script>

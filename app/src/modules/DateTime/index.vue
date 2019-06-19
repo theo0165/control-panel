@@ -1,5 +1,5 @@
 <template>
-    <div class="datetime">
+    <div id="datetime">
         <Date />
         <Clock />
     </div>
@@ -10,16 +10,16 @@ import Clock from './Clock'
 import Date from './Date'
 
 export default {
-    name: "DateTime",
-    components: {
-        Clock,
-        Date
-    }
+  name: 'DateTime',
+  components: {
+    Clock,
+    Date
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-    .datetime{
+    #datetime{
         padding: 20px 0 0 20px;
         display: inline-block;
     }
